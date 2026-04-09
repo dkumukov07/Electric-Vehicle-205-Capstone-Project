@@ -1,0 +1,24 @@
+County,Charging_Stations,Level1_Ports,Level2_Ports,DC_Fast_Ports,Total_Charging_Ports,Public_Stations,Stations_With_Level2,Stations_With_DC_Fast
+Baltimore County,382,1,1093,260,1354,353,333,66
+Montgomery,356,7,938,159,1104,321,324,42
+Prince George's,254,14,671,199,884,225,222,42
+Anne Arundel,176,22,466,153,641,161,148,40
+Howard,162,0,388,53,441,155,155,13
+Frederick,74,0,159,76,235,70,57,18
+Harford,54,0,163,112,275,51,36,24
+Washington,48,0,79,55,134,46,34,17
+St. Mary's,40,0,78,29,107,31,31,10
+Charles,37,0,59,28,87,32,28,9
+Worcester,29,0,65,25,90,27,25,5
+Carroll,25,0,64,18,82,24,22,8
+Wicomico,23,0,52,38,90,22,15,11
+Allegany,21,2,28,20,50,20,12,9
+Calvert,19,0,44,4,48,19,19,1
+Cecil,19,2,21,80,103,18,9,10
+Queen Anne's,17,0,34,32,66,17,13,6
+Garrett,16,0,20,16,36,16,10,6
+Kent,14,0,30,2,32,13,13,1
+Talbot,14,0,24,16,40,13,12,2
+Dorchester,14,0,26,10,36,14,11,3
+Caroline,5,0,15,0,15,5,5,0
+Somerset,5,0,10,2,12,5,4,1
