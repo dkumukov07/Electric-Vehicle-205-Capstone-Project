@@ -3,19 +3,19 @@ The purpose of this analysis is to explore patterns between electric vehicle (EV
 
 ## Key Findings
 
-- EV adoption is highest in counties such as Montgomery and Baltimore County
-- Charging stations are also concentrated in these same regions
-- There is a positive relationship between EV count and number of charging stations
-- Some counties have high EV-to-charging station ratios, suggesting limited infrastructure
-
+  1. EV's are increasing fast and concentrated
+  2. Every top income county is falling behind in charging stations
+  3. Low income counties have less registered EV's
+  4. Richer counties have more EVs but worse infrastructure gaps
+  5. Level 2 chargers serves residents, DC Fast chargers serves highways
 ## Visualizations
 
 The following visualizations were created:
-- Scatter plot showing EVs vs charging stations
-- Bar charts of top counties by EV adoption and charging stations
-- Correlation heatmap
-- Line chart showing EV growth over time
-- GIS map showing charging station locations
+- EV Growth Over time
+- Side By Side bar chart of income and EV's per Station
+- Charger Type distribution in counties
+- Top Counties by Charging Stations
+- Top Counties by EV Adoption
 
 ## Summary
 
