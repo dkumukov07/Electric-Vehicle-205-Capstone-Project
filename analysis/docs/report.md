@@ -1,42 +1,56 @@
-# Model 1 Simple Linear Regression
+# Model Analysis: EV Adoption Rate
 
-Ev_total ~ Total_Charging Stations
+## Purpose
 
-R² = 0.752
+The goal of this model is to understand what factors are related to higher EV adoption across Maryland counties.
 
-Adjusted R² = 0.740
+Instead of using raw EV totals, I used **EV per capita** so counties can be compared more fairly. Larger counties naturally have more people, chargers, and EVs, so using per capita helps control for county size.
 
-RMSE = 3,876 EVs
+## Model Used
 
-Slope = +62.1 EVs per station
 
-Pearson r = 0.867
+EV_per_Capita ~ Stations_per_1000 + Median_Income
 
-p-value = < 0.0001
 
-Total charging stations alone explain 75% of the variation in EV registrations across Maryland counties. For every additional charging station in a county, roughly 62 more EVs are registered there. The relationship is highly significant (F p < 0.0001) and the strong Pearson r (0.867) confirms a robust linear association. Station availability may attract EV buyers, high EV populations may attract station investment, or both.
+## Variables
 
-# Model 2 Multiple Linear Regression
+**EV_per_Capita**
+Measures EV adoption relative to population.
 
-Ev_Total~Level2 Chargers + DC Fast Chargers
+**Stations_per_1000**
+Measures charging station access per 1,000 residents.
 
-R² = 0.821
+**Median_Income**
+Measures the typical household income in each county.
 
-Adjusted R² = 0.803
+## Results
 
-RMSE = 3,290 EVs
+```text
+R² = 0.685
+Adjusted R² = 0.654
+Stations_per_1000 coefficient = +0.0114
+Stations_per_1000 p-value = 0.148
+Median_Income coefficient = +2.723e-07
+Median_Income p-value = 0.000
+RMSE = 0.0052
+```
 
-β = Level 2 Stations = +108.1 ***
+## Interpretation
 
-β = DC Fast Stations = -245.5 *
+The model explains about **68.5% of the variation** in EV adoption rates across counties.
 
-F-statistic = p3.37 × 10⁻⁸
+**Stations per 1,000 residents** has a positive coefficient, meaning counties with more charging access tend to have higher EV adoption. However, the p-value is **0.148**, so this relationship is not statistically significant.
 
-Splitting charger types improves R² by +0.069 and cuts RMSE by ~600 EVs over Model 1. Level 2 stations are strongly and positively associated with registrations. DC Fast stations carry a negative coefficient.
+**Median income** is positive and statistically significant. This means higher-income counties tend to have higher EV adoption rates.
 
-The negative β on DC Fast stations (−245.5, p = 0.030) is weird. DC Fast chargers are concentrated along highways (I-95, I-270, US-50) serving for long-distance travelers, not residents. Rural counties like Garrett, Dorchester, and Kent have DC Fast stations for through-traffic but fewer than 200 registered EVs each. Once Level 2 coverage is controlled for, DC Fast density becomes inversely associated with residential EV density.
-Basically DC Fast chargers are highway infrastructure. Level 2 chargers at homes and workplaces are what actually drives residential adoption.
+The p-value shows the relationship is meaningful.
 
-<img width="537" height="125" alt="Screenshot 2026-04-27 at 1 54 53 PM" src="https://github.com/user-attachments/assets/3f6e910c-e78f-4bf7-9245-256eb2335fcf" />
+## Main Takeaway
 
-Model 2 is the stronger specification because of better fit, lower prediction error, and it surfaces the charger-type distinction that Model 1 cannot detect.
+This model suggests that EV adoption is not only about charging infrastructure. Once population is accounted for, **income becomes the stronger predictor of EV adoption rate**.
+
+Charging access still has a positive relationship, but income appears to explain adoption more clearly in this model.
+
+## Conclusion
+
+After adjusting for population, EV adoption in Maryland appears to be strongly connected to income. This suggests that affordability and economic access are important parts of the EV transition, not just the number of charging stations.
